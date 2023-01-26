@@ -11,3 +11,4 @@
 
 /.env.dev
 /.env.prod
+.idea/
