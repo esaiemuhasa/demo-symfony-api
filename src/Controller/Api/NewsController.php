@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Api;
 
 use App\Entity\News;
 use App\Entity\User;
@@ -17,7 +17,6 @@ use Symfony\Component\Serializer\SerializerInterface;
 #[Route(path:'/api/news')]
 class NewsController extends AbstractController
 {
-
     public function __construct(
         private readonly NewsRepository $newsRepository,
         private readonly SerializerInterface $serializer
@@ -27,8 +26,8 @@ class NewsController extends AbstractController
      * Recuperation de la liste complete des news disponible sur le serveur
      * @return JsonResponse
      */
-    #[Route(path:'/', name: 'news.api.home', methods: ['GET'])]
-    public function index(): JsonResponse
+    #[Route(path:'/', name: 'api.news.all', methods: ['GET'])]
+    public function all(): JsonResponse
     {
         $news = $this->newsRepository->findAll();
         return new JsonResponse (
@@ -114,5 +113,4 @@ class NewsController extends AbstractController
 
         return new JsonResponse(null, Response::HTTP_NO_CONTENT);
     }
-
 }
