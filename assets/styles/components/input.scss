@@ -1,0 +1,47 @@
+:root {
+  --hint: #BBB;
+}
+
+.custom-input {
+  position: relative;
+  padding: 10px 0;
+
+
+  input {
+    display: block;
+    border: 1px solid var(--hint);
+    background: transparent;
+    padding: 15px;
+    font-size: 1em;
+    font-weight: bold;
+    outline: none;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    border-radius: 3px;
+
+    &:focus {
+      border-color: var(--foreground);
+    }
+
+    &:focus+label,
+    &:not([value=""])+label{
+      top: 0;
+      transform: translateY(0);
+      color: var(--foreground);
+      z-index: 3;
+    }
+  }
+
+  label {
+    transition: all 100ms linear;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    color: var(--hint);
+    padding:0 5px;
+    margin-left: 10px;
+    background: var(--background--header);
+  }
+}
