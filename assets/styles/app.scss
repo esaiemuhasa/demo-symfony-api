@@ -75,6 +75,31 @@ button {
     }
 }
 
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading {
+    padding: 100px;
+
+    .loading-icon {
+        padding: 10px;
+        margin: auto;
+        border: 6px solid var(--blue);
+        border-bottom-color: transparent;
+        border-radius: 22px;
+        animation: rotation .5s infinite linear;
+        height: 0;
+        width: 0;
+    }
+}
+
 .layout-header {
     border-bottom:1px solid var(--border-color);
     background: var(--background--header);
@@ -107,6 +132,7 @@ button {
 
 @import "login";
 @import "components/input";
+@import "pages/home";
 
 @import "@fortawesome/fontawesome-free/css/all.min.css";
 @import "~@flaticon/flaticon-uicons/css/all/all.css";

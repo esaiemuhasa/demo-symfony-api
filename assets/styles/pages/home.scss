@@ -1,0 +1,40 @@
+
+
+.home-page {
+  //background: #F8F8F8;
+  margin: auto;
+  padding-top: 20px;
+  width: 80%;
+
+  .news-container {
+    display: flex;
+    flex-flow: wrap;
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+}
+
+.home-news {
+  margin-bottom: 10px;
+  width: 50%;
+  padding: 10px;
+
+  h2 {
+    font-weight: normal;
+    font-size: 1.5rem;
+    color: var(--blue);
+    margin: 0;
+  }
+
+  p {
+    text-align: justify;
+    line-height: 2em;
+    font-size: 1.2em;
+  }
+}
+
+.news-item-container {
+  border: 1px solid var(--border-color);
+  padding: 10px;
+  background: var(--background--header);
+}
